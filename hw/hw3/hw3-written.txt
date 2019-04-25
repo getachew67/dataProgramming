@@ -1,0 +1,7 @@
+1. a) Yes, because overall, it shows the percentage of all types of sex, and by seeing the plot, we can say the total percentages of people with a minimum education of high school degrees in 2009 are similar among all types of sex.
+   b) I choose catplot because we can see the both the percentage of Hispanic for high school and bachelor's degree by representing them with differnt color of dots.
+   And also we can see how the percent of Hispanic change among years for both min degrees.
+
+2. There are many NaN values. For the Min degree, we cannot see the people with min degree of middle school or doctor's degree and etc.
+
+3. The length of the dataset is 214 which is quite small, so it's hard to tell the furture prediction depending on this small dataset.
