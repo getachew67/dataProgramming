@@ -23,7 +23,7 @@ def parse(file_name):
     """
     return pd.read_csv(file_name, na_values='---')
 
-
+data = parse('hw3-nces-ed-attainment.csv')
 def completions_between_years(data, yr1, yr2, sex):
     """
     Retuns all rows of the given data that have data between the given years
@@ -82,7 +82,8 @@ def line_plot_bachelors(data):
     sns.lineplot(data.keys(), data.values)
     plt.savefig('line_plot_bachelors.png')
 
-
+d = data[data['Min degree']=='bachelor\'s'].groupby('Year')['Total'].sum()
+d.values()
 def bar_chart_high_school(data):
     """
     Plot the bar chart of the total percentages of women, men,
