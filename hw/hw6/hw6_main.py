@@ -1,5 +1,5 @@
 # Seoyoung Park 1664741
-import cse163_utils
+import cse163_utils  # noqa: F401
 import geopandas
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,10 +17,6 @@ def load_in_data(fname1, fname2):
     data2 = geopandas.GeoDataFrame(data2)
     return data1.merge(data2, left_on='CTIDFP00', right_on='CensusTract',
                        how='left')
-
-
-data = load_in_data('tl_2010_53_tract00/tl_2010_53_tract00.shp',
-                    'food_access.csv')
 
 
 def percentage_food_data(data):
@@ -99,9 +95,12 @@ def plot_low_access_tracts(data):
     fig.savefig('washington_low_access.png')
 
 
-print(percentage_food_data(data))
-# plot_map(data)
-# plot_population_map(data)
-# plot_population_county_map(data)
-# plot_food_access_by_county(data)
-# plot_low_access_tracts(data)
+def main():
+    data = load_in_data('tl_2010_53_tract00/tl_2010_53_tract00.shp',
+                        'food_access.csv')
+    print(percentage_food_data(data))
+    plot_map(data)
+    plot_population_map(data)
+    plot_population_county_map(data)
+    plot_food_access_by_county(data)
+    plot_low_access_tracts(data)
