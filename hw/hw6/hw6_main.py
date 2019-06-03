@@ -13,8 +13,7 @@ def load_in_data(fname1, fname2):
     access CSV file
     """
     data1 = geopandas.read_file(fname1)
-    data2 = pd.read_csv(fname2)
-    data2 = geopandas.GeoDataFrame(data2)
+    data2 = geopandas.GeoDataFrame(pd.read_csv(fname2))
     return data1.merge(data2, left_on='CTIDFP00', right_on='CensusTract',
                        how='left')
 
